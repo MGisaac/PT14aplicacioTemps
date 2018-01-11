@@ -7,7 +7,23 @@ package com.isaac.pt14_maldonadoisaac.model;
 public class Bloc {
     private String hora;
     private String temperatura;
-    private boolean fredcalor;
+    // true es frio, false calor.
+    public boolean fredcalor;
+
+
+    public Bloc(){
+
+    }
+    public Bloc(String hora, String temperatura){
+        this.hora = hora;
+        this.temperatura = temperatura;
+        double temp = Double.parseDouble(temperatura);
+        if(temp <14){
+            fredcalor = true;
+        }else{
+            fredcalor = false;
+        }
+    }
 
     public String getHora() {
         return hora;
